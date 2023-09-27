@@ -30,7 +30,7 @@ class StudentModelAdmin(admin.ModelAdmin):
 
 @admin.register(Professor)
 class ProfessorModelAdmin(admin.ModelAdmin):
-    list_display = ['id', 'first_name', 'last_name', 'course', 'picture', 'date_join']
+    list_display = ['id', 'first_name', 'last_name', 'courses', 'picture', 'date_join']
 
 
 admin.site.register(CustomUser, UserModel)
