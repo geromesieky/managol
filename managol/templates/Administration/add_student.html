@@ -13,6 +13,18 @@
                         </ul>
                      </div>
                   </div>
+                  {% if messages %}
+                                        {% for message in messages %}
+                                        {% if message.tags == 'success' %}
+                                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                          {{message}}
+                                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        {% endif %}
+                                        {% endfor %}
+                  {% endif %}
                </div>
                <div class="row">
                   <div class="col-sm-12">
@@ -69,10 +81,10 @@
                                  <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                        <label>Classe</label>
-                                       <select class="form-control" name="classe_name">
+                                       <select class="form-control" name="classe_id">
                                           <option>Selectionner Classe</option>
                                           {% for i in classe %}
-                                          <option class="{{i.id}}">{{i.name}}</option>
+                                          <option value="{{i.id}}">{{i.name}}</option>
                                           {% endfor %}
                                        </select>
                                     </div>
@@ -145,7 +157,7 @@
                                  <div class="col-12 col-sm-6">
                                     <div class="form-group">
                                        <label>Telephone de la Mere</label>
-                                       <input type="text" class="form-control" name="mother_telephone">
+                                       <input type="text" class="form-control" name="mother_phone">
                                     </div>
                                  </div>
 
